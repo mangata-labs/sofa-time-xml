@@ -14,3 +14,6 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Sofa Time Xml"
 include ':app'
+include ':tvshow-domain'
+include ':core'
+include ':tvshow-data'

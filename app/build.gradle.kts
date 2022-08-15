@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("androidx.navigation.safeargs")
 }
 
 android {
@@ -34,10 +35,19 @@ android {
 }
 
 dependencies {
+    implementation(project(Modules.core))
+    implementation(Modules.tvShowDomain)
+    implementation(Modules.tvShowData)
+
     implementation(AndroidX.appCompact)
     implementation(AndroidX.constraintLayout)
     implementation(Google.material)
-
     implementation(AndroidX.coreKtx)
     implementation(AndroidX.lifecycleKtx)
+
+    implementation(AndroidX.navigationFragment)
+    implementation(AndroidX.navigationKtx)
+
+    implementation(Koin.koinAndroid)
+    implementation(Koin.koinNavigation)
 }
