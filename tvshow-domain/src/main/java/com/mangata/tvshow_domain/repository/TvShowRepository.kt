@@ -2,7 +2,7 @@ package com.mangata.tvshow_domain.repository
 
 import com.mangata.tvshow_domain.model.image.Poster
 import com.mangata.tvshow_domain.model.video.Video
-import com.mangata.tvshow_domain.model.tvShowList.TvShow
+import com.mangata.tvshow_domain.model.tvShowGeneral.TvShow
 import com.mangata.tvshow_domain.model.tvShowDetail.TvShowDetails
 
 interface TvShowRepository {

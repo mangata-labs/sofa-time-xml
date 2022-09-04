@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/tvShowHomeFragment">
+    <fragment
+        android:id="@+id/tvShowHomeFragment"
+        android:name="com.mangata.sofatimexml.presentation.tvShowHome.TvShowHomeFragment"
+        android:label="fragment_tv_show_home"
+        tools:layout="@layout/fragment_tv_show_home" >
+        <action
+            android:id="@+id/action_tvShowHomeFragment_to_tvShowDetailFragment"
+            app:destination="@id/tvShowDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tvShowDetailFragment"
+        android:name="com.mangata.sofatimexml.presentation.tvShowDetail.TvShowDetailFragment"
+        android:label="fragment_tv_show_detail"
+        tools:layout="@layout/fragment_tv_show_detail" >
+        <argument
+            android:name="tvShowId"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/tvShowTrackedFragment"
+        android:name="com.mangata.sofatimexml.presentation.tvShowTracked.TvShowTrackedFragment"
+        android:label="fragment_tv_show_tracked"
+        tools:layout="@layout/fragment_tv_show_tracked" >
+        <action
+            android:id="@+id/action_tvShowTrackedFragment_to_tvShowDetailFragment"
+            app:destination="@id/tvShowDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tvShowSearchFragment"
+        android:name="com.mangata.sofatimexml.presentation.tvShowSearch.TvShowSearchFragment"
+        android:label="fragment_tv_show_search"
+        tools:layout="@layout/fragment_tv_show_search" >
+        <action
+            android:id="@+id/action_tvShowSearchFragment_to_tvShowDetailFragment"
+            app:destination="@id/tvShowDetailFragment" />
+    </fragment>
+</navigation>

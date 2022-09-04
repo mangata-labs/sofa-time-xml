@@ -2,7 +2,7 @@ package com.mangata.tvshow_data.util
 
 import java.lang.reflect.Field
 
-private const val appPackageName = "com.mangata.sofatime"
+private const val appPackageName = "com.mangata.sofatimexml"
 
 internal object BuildConfigHelper {
 

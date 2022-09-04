@@ -7,7 +7,7 @@ buildscript {
 
     dependencies {
         classpath("com.android.tools.build:gradle:7.2.2")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${Kotlin.version}")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.10")
         classpath( Build.navigationSafeArgsPlugin)
         classpath(Build.kotlinSerializationGradlePlugin)
     }

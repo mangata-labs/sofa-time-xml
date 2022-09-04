@@ -17,7 +17,7 @@ import com.mangata.tvshow_domain.model.tvShowDetail.Genre
 import com.mangata.tvshow_domain.model.tvShowDetail.Network
 import com.mangata.tvshow_domain.model.tvShowDetail.Season
 import com.mangata.tvshow_domain.model.tvShowDetail.TvShowDetails
-import com.mangata.tvshow_domain.model.tvShowList.TvShow
+import com.mangata.tvshow_domain.model.tvShowGeneral.TvShow
 
 internal fun TvShowDto.toTvShow() : TvShow? {
     return TvShow(

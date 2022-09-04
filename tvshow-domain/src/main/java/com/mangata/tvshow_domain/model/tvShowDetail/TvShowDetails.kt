@@ -1,6 +1,6 @@
 package com.mangata.tvshow_domain.model.tvShowDetail
 
-import com.mangata.tvshow_domain.model.tvShowList.TvShow
+import com.mangata.tvshow_domain.model.tvShowGeneral.TvShow
 import java.util.*
 
 data class TvShowDetails(

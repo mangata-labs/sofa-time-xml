@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TextH1">
+        <item name="android:fontFamily">@font/cc_quicksand_bold</item>
+        <item name="fontFamily">@font/cc_quicksand_bold</item>
+        <item name="android:textSize">28sp</item>
+    </style>
+
+    <style name="TextH2">
+        <item name="android:fontFamily">@font/cc_quicksand_semi_bold</item>
+        <item name="fontFamily">@font/cc_quicksand_semi_bold</item>
+        <item name="android:textSize">23sp</item>
+    </style>
+
+    <style name="TextH3">
+        <item name="android:fontFamily">@font/cc_quicksand_semi_bold</item>
+        <item name="fontFamily">@font/cc_quicksand_semi_bold</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="TextH4">
+        <item name="android:fontFamily">@font/cc_quicksand_bold</item>
+        <item name="fontFamily">@font/cc_quicksand_bold</item>
+        <item name="android:textSize">23sp</item>
+    </style>
+
+    <style name="TextBody1">
+        <item name="android:fontFamily">@font/cc_quicksand_medium</item>
+        <item name="fontFamily">@font/cc_quicksand_medium</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="TextBody2">
+        <item name="android:fontFamily">@font/cc_quicksand_regular</item>
+        <item name="fontFamily">@font/cc_quicksand_regular</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+
+</resources>

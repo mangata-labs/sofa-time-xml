@@ -4,7 +4,7 @@ import androidx.room.*
 import kotlinx.coroutines.flow.Flow
 
 @Dao
-interface TvShowDao {
+internal interface TvShowDao {
     @Query("SELECT * FROM tv_shows_table")
     suspend fun getAllTrackedTvShows(): List<TrackedTvShow>
 

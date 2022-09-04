@@ -11,6 +11,10 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Sofa_Time_Xml.buildSrc.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Sofa_Time_Xml.buildSrc.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Sofa_Time_Xml.buildSrc.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Sofa_Time_Xml.buildSrc.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/Sofa_Time_Xml.core.iml" filepath="$PROJECT_DIR$/.idea/modules/core/Sofa_Time_Xml.core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core-ui/Sofa_Time_Xml.core-ui.iml" filepath="$PROJECT_DIR$/.idea/modules/core-ui/Sofa_Time_Xml.core-ui.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core-ui/Sofa_Time_Xml.core-ui.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/core-ui/Sofa_Time_Xml.core-ui.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core-ui/Sofa_Time_Xml.core-ui.main.iml" filepath="$PROJECT_DIR$/.idea/modules/core-ui/Sofa_Time_Xml.core-ui.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core-ui/Sofa_Time_Xml.core-ui.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/core-ui/Sofa_Time_Xml.core-ui.unitTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/Sofa_Time_Xml.core.main.iml" filepath="$PROJECT_DIR$/.idea/modules/core/Sofa_Time_Xml.core.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/Sofa_Time_Xml.core.test.iml" filepath="$PROJECT_DIR$/.idea/modules/core/Sofa_Time_Xml.core.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/tvshow-data/Sofa_Time_Xml.tvshow-data.iml" filepath="$PROJECT_DIR$/.idea/modules/tvshow-data/Sofa_Time_Xml.tvshow-data.iml" />

@@ -1,4 +1,4 @@
-package com.mangata.tvshow_domain.model.tvShowList
+package com.mangata.tvshow_domain.model.tvShowGeneral
 
 
 data class TvShow(

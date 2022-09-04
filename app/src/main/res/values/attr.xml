@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="colorTextPrimary" format="color" />
+    <attr name="colorTextPrimaryDim" format="color" />
+
+    <attr name="colorNavigationItemActive" format="color" />
+    <attr name="colorNavigationItemInactive" format="color" />
+
+    <attr name="colorComponentBackground" format="color" />
+
+</resources>

@@ -6,7 +6,9 @@
       <module name="Sofa_Time_Xml.buildSrc" target="11" />
       <module name="Sofa_Time_Xml.buildSrc.main" target="11" />
       <module name="Sofa_Time_Xml.buildSrc.test" target="11" />
+      <module name="Sofa_Time_Xml.core-ui" target="11" />
       <module name="Sofa_Time_Xml.tvshow-data" target="11" />
+      <module name="Sofa_Time_Xml.tvshow-presentation" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>

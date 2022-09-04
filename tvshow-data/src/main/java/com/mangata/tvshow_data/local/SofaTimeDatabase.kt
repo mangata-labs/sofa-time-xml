@@ -6,7 +6,7 @@ import com.mangata.tvshow_data.local.dao.tvShow.TvShowDao
 import com.mangata.tvshow_data.local.dao.tvShow.TrackedTvShow
 
 @Database(entities = [TrackedTvShow::class], version = 1, exportSchema = false)
-abstract class SofaTimeDatabase : RoomDatabase() {
+internal abstract class SofaTimeDatabase : RoomDatabase() {
 
     abstract fun tvShowDao(): TvShowDao
 

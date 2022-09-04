@@ -1,7 +1,7 @@
 package com.mangata.tvshow_data.local.mappers
 
 import com.mangata.tvshow_data.local.dao.tvShow.TrackedTvShow
-import com.mangata.tvshow_domain.model.tvShowList.TvShow
+import com.mangata.tvshow_domain.model.tvShowGeneral.TvShow
 
 internal fun TrackedTvShow.toTvShow() : TvShow {
     return TvShow(

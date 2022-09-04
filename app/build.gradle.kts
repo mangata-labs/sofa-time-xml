@@ -1,7 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    id("androidx.navigation.safeargs")
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
@@ -12,6 +12,9 @@ android {
         targetSdk = ProjectConfig.targetSdk
         versionCode = ProjectConfig.versionCode
         versionName = ProjectConfig.versionName
+
+        buildConfigField("String", ApiKeys.TMDB_API_KEY, ApiKeys.getTmdbApiKey)
+        buildConfigField("String", ApiKeys.TRAKT_CLIENT_ID, ApiKeys.getTraktClientID)
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -25,6 +28,11 @@ android {
             )
         }
     }
+
+    buildFeatures {
+        viewBinding = true
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -36,8 +44,9 @@ android {
 
 dependencies {
     implementation(project(Modules.core))
-    implementation(Modules.tvShowDomain)
-    implementation(Modules.tvShowData)
+    implementation(project(Modules.tvShowDomain))
+    implementation(project(Modules.tvShowData))
+    implementation(project(Modules.coreUI))
 
     implementation(AndroidX.appCompact)
     implementation(AndroidX.constraintLayout)
@@ -50,4 +59,6 @@ dependencies {
 
     implementation(Koin.koinAndroid)
     implementation(Koin.koinNavigation)
+
+    implementation(Coil.coilAndroid)
 }

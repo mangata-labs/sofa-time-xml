@@ -5,7 +5,7 @@ import androidx.room.PrimaryKey
 import com.mangata.tvshow_data.local.SofaTimeDatabase.Companion.DATABASE_TV_SHOW_TABLE
 
 @Entity(tableName = DATABASE_TV_SHOW_TABLE)
-data class TrackedTvShow(
+internal data class TrackedTvShow(
     @PrimaryKey(autoGenerate = false)
     val id: Int,
     val name: String,

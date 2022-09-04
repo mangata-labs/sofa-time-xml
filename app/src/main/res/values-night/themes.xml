@@ -1,16 +1,28 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.SofaTimeXml" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_200</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/black</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_200</item>
-        <item name="colorOnSecondary">@color/black</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+    <style name="Theme.SofaTimeXml" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+        <item name="colorPrimary">@color/light_red</item>
+        <item name="colorPrimaryVariant">@color/dark_red</item>
+        <item name="colorOnPrimary">@color/snow_white</item>
+
+        <item name="colorSecondary">@color/star_yellow</item>
+        <item name="colorOnSecondary">@color/snow_white</item>
+
+        <item name="colorTextPrimary">@color/white</item>
+        <item name="colorTextPrimaryDim">@color/semi_light_gray</item>
+
+        <item name="android:windowBackground">@color/semi_black</item>
+        <item name="android:colorBackground">@color/snow_white</item>
+        <item name="colorSurface">@color/semi_dark_gray</item>
+
+        <item name="android:statusBarColor">@color/semi_black</item>
+        <item name="android:windowLightStatusBar">false</item>
+
+        <item name="colorNavigationItemActive">?colorPrimary</item>
+        <item name="colorNavigationItemInactive">@color/light_gray</item>
+
+        <item name="colorComponentBackground">@color/dark_gray</item>
     </style>
+
 </resources>
