@@ -3,25 +3,39 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    android:clipToPadding="false">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineLeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTrailing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
 
     <LinearLayout
         android:id="@+id/layoutStackView"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:clipChildren="false"
-        android:clipToPadding="false"
         android:gravity="top"
         android:orientation="vertical"
-        android:paddingVertical="20dp"
         android:visibility="invisible"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineTrailing"
+        app:layout_constraintStart_toStartOf="@+id/guidelineLeading"
         tools:context=".presentation.tvShowHome.TvShowHomeFragment"
         tools:visibility="visible">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
             android:text="Trending Now"
             android:textAppearance="@style/TextH1"
             android:textColor="?colorTextPrimary" />
@@ -34,9 +48,8 @@
             android:id="@+id/viewPagerTvShowCarousel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="14dp"
-            android:clipChildren="false"
-            android:clipToPadding="false" />
+            tools:background="@android:color/darker_gray"
+            tools:layout_height="220dp" />
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabLayout"
@@ -54,7 +67,6 @@
             android:id="@+id/cardViewSearch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
             app:cardCornerRadius="8dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout

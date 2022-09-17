@@ -37,16 +37,20 @@
         <entry key="app/src/main/res/font/cc_quicksand_regular.xml" value="0.24895833333333334" />
         <entry key="app/src/main/res/font/cc_quicksand_semi_bold.xml" value="0.24895833333333334" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/fragment_tv_show_detail.xml" value="0.2463768115942029" />
+        <entry key="app/src/main/res/layout/fragment_tv_show_detail.xml" value="0.335" />
         <entry key="app/src/main/res/layout/fragment_tv_show_home.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_tv_show_search.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_tv_show_tracked.xml" value="0.2463768115942029" />
         <entry key="app/src/main/res/layout/item_empty_list_message.xml" value="0.3036651611328125" />
         <entry key="app/src/main/res/layout/item_loading.xml" value="0.10030395136778116" />
         <entry key="app/src/main/res/layout/item_rating.xml" value="0.6570663009864697" />
+        <entry key="app/src/main/res/layout/item_similar_tv_show.xml" value="0.2554347826086957" />
         <entry key="app/src/main/res/layout/item_trending_tv_show.xml" value="0.25" />
         <entry key="app/src/main/res/layout/item_tv_show.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/item_tv_show_network.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/item_tv_show_poster.xml" value="0.2644927536231884" />
         <entry key="app/src/main/res/layout/item_view_pager.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/some_layout.xml" value="0.1712962962962963" />
         <entry key="app/src/main/res/menu/drawer_bottom_nav_menu.xml" value="0.359375" />
         <entry key="tvshow-presentation/src/main/res/layout/fragment_tv_show_detail.xml" value="0.35507246376811596" />
         <entry key="tvshow-presentation/src/main/res/layout/fragment_tv_show_home.xml" value="0.34148550724637683" />

@@ -11,20 +11,20 @@ import com.mangata.sofatimexml.databinding.ItemTvShowBinding
 import com.mangata.tvshow_domain.model.tvShowGeneral.TvShow
 
 class TvShowAdapter(
-    private val clickListener: (TvShow) -> Unit
+    private val clickListener: (Int) -> Unit
 ) : ListAdapter<TvShow, TvShowAdapter.TvShowViewHolder>(DiffCallBack()) {
 
     inner class TvShowViewHolder(private val binding: ItemTvShowBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(tvShow: TvShow, clickListener: (TvShow) -> Unit) {
+        fun bind(tvShow: TvShow, clickListener: (Int) -> Unit) {
             binding.apply {
                 textViewTvShowTitle.text = tvShow.name
                 imageViewTvShow.load(tvShow.backdropPath) {
                     crossfade(true)
                     placeholder(R.drawable.img_placeholder)
                 }
-                itemView.setOnClickListener { clickListener(tvShow) }
+                itemView.setOnClickListener { clickListener(tvShow.id) }
             }
         }
     }

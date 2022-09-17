@@ -73,8 +73,8 @@ class TvShowHomeFragment : Fragment(R.layout.fragment_tv_show_home) {
     }
 
     private suspend fun handleLoadingContent() {
-        viewModel.isLoading.collect {
-            if (it) {
+        viewModel.isLoading.collect { loading ->
+            if (loading) {
                 binding.progressBar.visibility = View.VISIBLE
                 binding.layoutStackView.visibility = View.INVISIBLE
             } else {

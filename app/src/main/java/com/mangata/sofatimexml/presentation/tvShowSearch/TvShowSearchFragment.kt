@@ -11,12 +11,14 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.mangata.core_ui.util.hideKeyboard
 import com.mangata.sofatimexml.R
 import com.mangata.sofatimexml.adapters.TvShowAdapter
 import com.mangata.sofatimexml.databinding.FragmentTvShowSearchBinding
+import com.mangata.sofatimexml.presentation.tvShowHome.TvShowHomeFragmentDirections
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
@@ -39,7 +41,7 @@ class TvShowSearchFragment : Fragment(R.layout.fragment_tv_show_search) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val tvShowAdapter = TvShowAdapter { tvShow -> println("open details") }
+        val tvShowAdapter = TvShowAdapter { tvShowId -> openTvShowDetail(tvShowId) }
         binding.recyclerViewTvShowList.apply {
             adapter = tvShowAdapter
             layoutManager = LinearLayoutManager(requireContext())
@@ -115,6 +117,12 @@ class TvShowSearchFragment : Fragment(R.layout.fragment_tv_show_search) {
                 }
                 tvShowAdapter.submitList(it.tvShows)
             }
+    }
+
+    private fun openTvShowDetail(tvShowId: Int) {
+        val action =
+            TvShowSearchFragmentDirections.actionTvShowSearchFragmentToTvShowDetailFragment(tvShowId)
+        findNavController().navigate(action)
     }
 
     @OptIn(FlowPreview::class)

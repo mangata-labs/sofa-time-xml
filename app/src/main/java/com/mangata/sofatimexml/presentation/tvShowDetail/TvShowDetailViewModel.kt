@@ -9,8 +9,6 @@ import com.mangata.tvshow_domain.model.tvShowDetail.toTvShow
 import com.mangata.tvshow_domain.model.tvShowGeneral.TvShow
 import com.mangata.tvshow_domain.model.video.Video
 import com.mangata.tvshow_domain.repository.TvShowRepository
-import com.mangata.tvshow_presentation.tvShowDetail.components.headerSection.TvDetailsHeaderModel
-import com.mangata.tvshow_presentation.tvShowDetail.components.headerSection.toDetailHeaderModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.channels.Channel
@@ -44,14 +42,11 @@ class TvShowDetailViewModel(
     var isLoading = MutableStateFlow(false)
         private set
 
-    var didAllLoad = MutableStateFlow(false)
-        private set
-
     var isAddedToWatchList = MutableStateFlow(false)
         private set
 
     private val eventChannel = Channel<UiEvent>(Channel.UNLIMITED)
-    val eventsFlow = eventChannel.receiveAsFlow()
+    val eventFlow = eventChannel.receiveAsFlow()
 
     init {
         getData()
@@ -87,7 +82,6 @@ class TvShowDetailViewModel(
     private fun getData() = try {
         viewModelScope.launch {
             isLoading.value = true
-            didAllLoad.value = false
             val tvShowDeferred = async { repository.getTvShowDetails(tvShowId) }
             val videoDeferred = async { repository.getVideoForTvShow(tvShowId) }
             val posterDeferred = async { repository.getImagesForTvShow(tvShowId) }
@@ -108,7 +102,6 @@ class TvShowDetailViewModel(
                 isAddedToWatchList.value = handleWatchlistSelector(watchList, tvShow)
             }
             isLoading.value = false
-            didAllLoad.value = true
         }
     } catch (e: Exception) {
         errorState.value = e.localizedMessage ?: ""
