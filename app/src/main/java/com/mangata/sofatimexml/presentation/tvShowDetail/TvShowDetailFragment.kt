@@ -57,8 +57,8 @@ class TvShowDetailFragment : Fragment(R.layout.fragment_tv_show_detail) {
                 binding.txtTvShowYear.text = tvShowDetails.displayDate()
                 binding.txtTvShowSeason.text = " ● ${tvShowDetails.numberOfSeasons} Seasons"
                 binding.txtTvShowGenres.text = tvShowDetails.displayGenres()
-                binding.txtTvShowRuntime.text = if (tvShowDetails.runTime != null) "${tvShowDetails.runTime}" else " - "
-                binding.viewItemRating.txtTvShowRating.text = tvShowDetails.score.round(1)
+                binding.txtTvShowRuntime.text = if (tvShowDetails.runTime != null) "${tvShowDetails.runTime} min" else " - "
+                binding.txtTvShowRating.text = tvShowDetails.score.round(1)
                 binding.tvShowImage.load(tvShowDetails.imagePath)
             }
     }

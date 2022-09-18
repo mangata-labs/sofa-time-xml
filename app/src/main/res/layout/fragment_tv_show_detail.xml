@@ -9,12 +9,12 @@
         android:id="@+id/layoutStackView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp">
+        android:layout_marginBottom="40dp">
 
         <ImageView
             android:id="@+id/tvShowImage"
             android:layout_width="match_parent"
-            android:layout_height="240dp"
+            android:layout_height="220dp"
             android:contentDescription="Tv Show Banner"
             android:scaleType="centerCrop"
             app:layout_constraintEnd_toEndOf="parent"
@@ -22,91 +22,93 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:src="@tools:sample/backgrounds/scenic" />
 
+        <TextView
+            android:id="@+id/tvShowTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="15dp"
+            android:textAppearance="@style/TextH1"
+            android:textColor="?colorTextPrimary"
+            app:layout_constraintEnd_toStartOf="@+id/imageButtonAddToWatchilst"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvShowImage"
+            tools:text="Game of Thrones" />
+
+        <ImageButton
+            android:id="@+id/imageButtonAddToWatchilst"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="20dp"
+            android:backgroundTint="@android:color/transparent"
+            android:contentDescription="Checkmark"
+            android:padding="0dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_check_circle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tvShowTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvShowImage" />
+
+
+        <TextView
+            android:id="@+id/txtTvShowYear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textAppearance="@style/TextBody1"
+            android:textColor="?colorTextPrimary"
+            app:layout_constraintStart_toStartOf="@id/tvShowTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvShowTitle"
+            tools:text="2019 - Present" />
+
+        <TextView
+            android:id="@+id/txtTvShowSeason"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextBody1"
+            android:textColor="?colorTextPrimaryDim"
+            app:layout_constraintStart_toEndOf="@id/txtTvShowYear"
+            app:layout_constraintTop_toTopOf="@+id/txtTvShowYear"
+            tools:text=" ● 3 Seasons" />
+
         <LinearLayout
-            android:id="@+id/titleSection"
-            android:layout_width="match_parent"
+            android:id="@+id/rootTrendingItem"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginTop="10dp"
-            android:weightSum="10"
+            android:background="@drawable/shape_rounded_corner_small"
+            android:backgroundTint="?colorComponentBackground"
+            android:gravity="center"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintBottom_toBottomOf="@id/txtTvShowSeason"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvShowImage">
+            app:layout_constraintTop_toBottomOf="@+id/tvShowTitle"
+            app:layout_constraintTop_toTopOf="@id/txtTvShowSeason"
+            android:orientation="horizontal"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="4dp">
 
             <TextView
-                android:id="@+id/tvShowTitle"
+                android:id="@+id/txtTvShowRating"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="6"
-                android:textAppearance="@style/TextH1"
+                android:layout_marginEnd="4dp"
                 android:textColor="?colorTextPrimary"
-                tools:text="Game of Thrones" />
+                android:textSize="14sp"
+                android:textStyle="bold"
+                tools:text="4.5" />
 
-            <FrameLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:background="@android:color/transparent">
-
-                <ImageButton
-                    android:id="@+id/imageButtonAddToWatchilst"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="end"
-                    android:backgroundTint="@android:color/transparent"
-                    android:contentDescription="Checkmark"
-                    android:gravity="end"
-                    android:padding="0dp"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/ic_check_circle" />
-            </FrameLayout>
-
+            <ImageView
+                android:layout_width="14sp"
+                android:layout_height="14sp"
+                android:contentDescription="Star Icon"
+                android:src="@drawable/ic_star"
+                app:tint="?colorSecondary" />
         </LinearLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/yearAndRatingSection"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginTop="10dp"
-            android:weightSum="10"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/titleSection">
-
-            <TextView
-                android:id="@+id/txtTvShowYear"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="@style/TextBody1"
-                android:textColor="?colorTextPrimary"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="2019 - Present" />
-
-            <TextView
-                android:id="@+id/txtTvShowSeason"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="@style/TextBody1"
-                android:textColor="?colorTextPrimaryDim"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@id/txtTvShowYear"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text=" ● 3 Seasons" />
-
-            <include
-                android:id="@+id/view_item_rating"
-                layout="@layout/item_rating"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
             android:id="@+id/txtTvShowGenres"
@@ -118,7 +120,7 @@
             android:textAppearance="@style/TextBody1"
             android:textColor="?colorTextPrimary"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/yearAndRatingSection"
+            app:layout_constraintTop_toBottomOf="@+id/txtTvShowSeason"
             tools:text="Drama, Action and Adventure" />
 
         <TextView
@@ -129,6 +131,7 @@
             android:layout_marginTop="10dp"
             android:drawablePadding="5dp"
             android:gravity="center"
+            android:textAppearance="@style/TextBody1"
             android:textColor="?colorTextPrimaryDim"
             app:drawableRightCompat="@drawable/ic_timer"
             app:drawableTint="?colorTextPrimaryDim"

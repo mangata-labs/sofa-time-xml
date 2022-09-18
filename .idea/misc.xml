@@ -37,7 +37,7 @@
         <entry key="app/src/main/res/font/cc_quicksand_regular.xml" value="0.24895833333333334" />
         <entry key="app/src/main/res/font/cc_quicksand_semi_bold.xml" value="0.24895833333333334" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/fragment_tv_show_detail.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/fragment_tv_show_detail.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_tv_show_home.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_tv_show_search.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_tv_show_tracked.xml" value="0.2463768115942029" />
