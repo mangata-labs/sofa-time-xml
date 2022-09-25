@@ -1,13 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: io.insert-koin:koin-android:3.2.0@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/1e05ede8c07adfe633cb7991596b5440/transformed/koin-android-3.2.0/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/94b85feeae9b4754fa641f4acda59760/transformed/koin-android-3.2.0/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/560ef7b0b2364fdf3b04c78993bb3a4d/transformed/koin-android-3.2.0/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/dd2b29b474f2e3ccd1b224a6e494fb30/transformed/koin-android-3.2.0/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/b90a9dcb68090179cfff5ccf18ac4b87/transformed/koin-android-3.2.0/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/947c7635f32fa17a484893db38414b57/transformed/koin-android-3.2.0/res" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/947c7635f32fa17a484893db38414b57/transformed/koin-android-3.2.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/947c7635f32fa17a484893db38414b57/transformed/koin-android-3.2.0/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/947c7635f32fa17a484893db38414b57/transformed/koin-android-3.2.0/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>

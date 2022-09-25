@@ -25,8 +25,6 @@ class MainActivity : AppCompatActivity(), SearchTvShowListener {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val bottomView = findViewById<BottomNavigationView>(R.id.bottom_nav)
-
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.findNavController()
@@ -41,7 +39,7 @@ class MainActivity : AppCompatActivity(), SearchTvShowListener {
         binding.bottomNav.setupWithNavController(navController)
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
-                R.id.tvShowDetailFragment -> {
+                R.id.tvShowDetailFragment, R.id.webViewFragment -> {
                     binding.bottomNav.visibility = View.GONE
                 }
                 else -> {

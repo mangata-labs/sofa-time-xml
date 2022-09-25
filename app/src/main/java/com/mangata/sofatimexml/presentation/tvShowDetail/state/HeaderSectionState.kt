@@ -1,4 +1,4 @@
-package com.mangata.sofatimexml.presentation.tvShowDetail
+package com.mangata.sofatimexml.presentation.tvShowDetail.state
 
 import com.mangata.core.extensions.toYear
 import com.mangata.tvshow_domain.model.tvShowDetail.Genre

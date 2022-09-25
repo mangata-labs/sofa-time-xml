@@ -16,9 +16,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.mangata.core_ui.util.hideKeyboard
 import com.mangata.sofatimexml.R
+import com.mangata.core_ui.R as CoreUI
 import com.mangata.sofatimexml.adapters.TvShowAdapter
 import com.mangata.sofatimexml.databinding.FragmentTvShowSearchBinding
-import com.mangata.sofatimexml.presentation.tvShowHome.TvShowHomeFragmentDirections
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
@@ -59,35 +59,40 @@ class TvShowSearchFragment : Fragment(R.layout.fragment_tv_show_search) {
             }
         })
 
-        binding.editTxtSearch.apply {
+        binding.editTxtLayout.apply {
             endIconDrawable = null
             startIconDrawable =
-                ResourcesCompat.getDrawable(resources, R.drawable.ic_search, resources.newTheme())
+                ResourcesCompat.getDrawable(
+                    resources,
+                    CoreUI.drawable.ic_search,
+                    resources.newTheme()
+                )
         }
 
-        binding.editTxtSearch.setEndIconOnClickListener {
+        binding.editTxtLayout.setEndIconOnClickListener {
             viewModel.searchState.value = ""
-            binding.etSearch.text.clear()
+            binding.editTxtSearch.text.clear()
         }
 
-        binding.etSearch.setOnEditorActionListener { _, actionId, _ ->
+        binding.editTxtSearch.setOnEditorActionListener { _, actionId, _ ->
             if (actionId == EditorInfo.IME_ACTION_SEARCH) {
                 hideKeyboard(requireActivity())
             }
             false
         }
 
-        binding.etSearch.doOnTextChanged { text, _, _, _ ->
+        binding.editTxtSearch.doOnTextChanged { text, _, _, _ ->
             text?.let {
                 if (it.isNotEmpty()) {
-                    binding.editTxtSearch.endIconDrawable = ResourcesCompat.getDrawable(
-                        resources,
-                        R.drawable.ic_cancel,
-                        resources.newTheme()
-                    )
+                    binding.editTxtLayout.endIconDrawable =
+                        ResourcesCompat.getDrawable(
+                            resources,
+                            CoreUI.drawable.ic_cancel,
+                            resources.newTheme()
+                        )
                     viewModel.searchState.value = it.toString()
                 } else {
-                    binding.editTxtSearch.endIconDrawable = null
+                    binding.editTxtLayout.endIconDrawable = null
                 }
             }
         }

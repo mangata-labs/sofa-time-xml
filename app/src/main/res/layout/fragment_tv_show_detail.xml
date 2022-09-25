@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".presentation.tvShowDetail.TvShowDetailFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layoutStackView"
@@ -48,7 +49,7 @@
             android:contentDescription="Checkmark"
             android:padding="0dp"
             android:scaleType="fitXY"
-            android:src="@drawable/ic_check_circle"
+            android:src="@drawable/ic_circle_outlined_add"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/tvShowTitle"
@@ -150,7 +151,7 @@
             app:layout_constraintTop_toBottomOf="@id/txtTvShowRuntime" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewTrailer"
+            android:id="@+id/recyclerViewPosterSection"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
@@ -169,7 +170,7 @@
             android:textAppearance="@style/TextH2"
             android:textColor="?colorTextPrimary"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/recyclerViewTrailer" />
+            app:layout_constraintTop_toBottomOf="@id/recyclerViewPosterSection" />
 
         <TextView
             android:id="@+id/txtStoryDescription"

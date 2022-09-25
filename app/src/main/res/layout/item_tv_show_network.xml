@@ -5,25 +5,24 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
-    <com.google.android.material.card.MaterialCardView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:elevation="0dp"
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imageViewTvShowNetwork"
+        android:layout_width="90dp"
+        android:layout_height="45dp"
+        android:layout_gravity="center"
+        android:padding="0.5dp"
+        android:scaleType="fitCenter"
+        app:contentPaddingBottom="4dp"
+        app:contentPaddingEnd="8dp"
+        app:contentPaddingStart="8dp"
+        app:contentPaddingTop="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/roundedCornerShapeMedium"
         app:strokeColor="?colorComponentBackground"
-        app:strokeWidth="1dp">
-
-        <ImageView
-            android:id="@+id/imageViewTvShowNetwork"
-            android:layout_width="50dp"
-            android:layout_height="25dp"
-            android:scaleType="fitXY"
-            tools:src="@tools:sample/avatars" />
-
-    </com.google.android.material.card.MaterialCardView>
+        app:strokeWidth="1dp"
+        tools:src="@tools:sample/avatars" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

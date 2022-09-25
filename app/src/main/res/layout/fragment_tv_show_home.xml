@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:clipChildren="false"
-    android:clipToPadding="false">
+    android:clipToPadding="false"
+    tools:context=".presentation.tvShowHome.TvShowHomeFragment">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineLeading"
@@ -24,6 +25,7 @@
     <LinearLayout
         android:id="@+id/layoutStackView"
         android:layout_width="0dp"
+        android:paddingTop="20dp"
         android:layout_height="match_parent"
         android:gravity="top"
         android:orientation="vertical"

@@ -9,12 +9,12 @@
         android:id="@+id/imageViewTvShowPoster"
         android:layout_width="115dp"
         android:layout_height="115dp"
-        app:shapeAppearanceOverlay="@style/roundedCornerShapeSmall"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/roundedCornerShapeSmall"
         tools:src="@tools:sample/avatars" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

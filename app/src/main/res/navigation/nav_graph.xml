@@ -21,6 +21,12 @@
         <argument
             android:name="tvShowId"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_tvShowDetailFragment_self"
+            app:destination="@id/tvShowDetailFragment" />
+        <action
+            android:id="@+id/action_tvShowDetailFragment_to_webViewFragment"
+            app:destination="@id/webViewFragment" />
     </fragment>
     <fragment
         android:id="@+id/tvShowTrackedFragment"
@@ -39,5 +45,13 @@
         <action
             android:id="@+id/action_tvShowSearchFragment_to_tvShowDetailFragment"
             app:destination="@id/tvShowDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/webViewFragment"
+        android:name="com.mangata.sofatimexml.presentation.common.WebViewFragment"
+        android:label="WebViewFragment" >
+        <argument
+            android:name="url"
+            app:argType="string" />
     </fragment>
 </navigation>

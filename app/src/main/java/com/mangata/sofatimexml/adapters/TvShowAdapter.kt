@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
-import com.mangata.sofatimexml.R
+import com.mangata.core_ui.R
 import com.mangata.sofatimexml.databinding.ItemTvShowBinding
 import com.mangata.tvshow_domain.model.tvShowGeneral.TvShow
 

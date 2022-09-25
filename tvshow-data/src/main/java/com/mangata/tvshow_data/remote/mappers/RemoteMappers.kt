@@ -39,17 +39,17 @@ internal fun TvShowDetailDto.toTvShowDetails() : TvShowDetails? {
         genres = genres.map { it.toGenre() },
         seasons = seasons.mapNotNull { it.toSeason() },
         networks = networks.mapNotNull { it.toNetwork() },
-        number_of_episodes = number_of_episodes,
-        number_of_seasons = number_of_seasons,
-        overview = overview,
-        firstAirDate = first_air_date.toDate(),
-        lastAiredDate = last_air_date.toDate(),
+        number_of_episodes = number_of_episodes ?: return null,
+        number_of_seasons = number_of_seasons ?: return null,
+        overview = overview ?: return null,
+        firstAirDate = first_air_date?.toDate(),
+        lastAiredDate = last_air_date?.toDate(),
         episode_run_time = episode_run_time,
-        homepage = homepage,
-        inProduction = in_production,
-        voteAverage = vote_average,
-        voteCount = vote_count,
-        status = status
+        homepage = homepage ?: return null,
+        inProduction = in_production ?: return null,
+        voteAverage = vote_average ?: return null,
+        voteCount = vote_count ?: return null,
+        status = status ?: return null
     )
 }
 

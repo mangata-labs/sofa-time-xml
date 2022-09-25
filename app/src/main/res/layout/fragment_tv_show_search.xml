@@ -4,13 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingHorizontal="20dp"
-    android:paddingVertical="10dp"
+    android:paddingTop="10dp"
     tools:context=".presentation.tvShowSearch.TvShowSearchFragment">
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/editTxtSearch"
-        android:layout_width="match_parent"
+        android:id="@+id/editTxtLayout"
+        android:layout_width="0dp"
         android:layout_height="56dp"
         android:drawableTint="?colorTextPrimaryDim"
         android:elevation="2dp"
@@ -27,17 +26,18 @@
         app:endIconMode="custom"
         app:hintAnimationEnabled="false"
         app:hintEnabled="false"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/guidelineTrailing"
+        app:layout_constraintStart_toStartOf="@id/guidelineLeading"
         app:layout_constraintTop_toTopOf="parent">
 
         <EditText
-            android:id="@+id/et_search"
+            android:id="@+id/editTxtSearch"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:backgroundTint="?colorSurface"
             android:hint="Search Tv Shows..."
             android:imeOptions="actionSearch"
+            android:importantForAutofill="no"
             android:inputType="text"
             android:maxLines="1"
             android:paddingTop="8dp" />
@@ -47,22 +47,36 @@
     <include
         android:id="@+id/emptyListMessage"
         layout="@layout/item_empty_list_message"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTxtSearch" />
+        app:layout_constraintEnd_toEndOf="@id/guidelineTrailing"
+        app:layout_constraintStart_toStartOf="@id/guidelineLeading"
+        app:layout_constraintTop_toBottomOf="@+id/editTxtLayout" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewTvShowList"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTxtSearch" />
+        app:layout_constraintEnd_toEndOf="@id/guidelineTrailing"
+        app:layout_constraintStart_toStartOf="@id/guidelineLeading"
+        app:layout_constraintTop_toBottomOf="@+id/editTxtLayout" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineLeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTrailing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

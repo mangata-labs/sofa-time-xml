@@ -4,15 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginEnd="12dp"
     android:orientation="vertical">
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/imageViewTvShowPoster"
         android:layout_width="125dp"
         android:layout_height="150dp"
-        android:layout_marginBottom="6dp"
         android:scaleType="centerCrop"
+        android:layout_marginBottom="6dp"
         app:shapeAppearanceOverlay="@style/roundedCornerShapeSmall"
         tools:src="@tools:sample/avatars" />
 

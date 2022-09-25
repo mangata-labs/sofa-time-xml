@@ -12,6 +12,7 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.tabs.TabLayoutMediator
+import com.mangata.core_ui.util.SpacingItemDecoration
 import com.mangata.core_ui.util.UiEvent
 import com.mangata.sofatimexml.R
 import com.mangata.sofatimexml.adapters.TrendingTvShowAdapter
@@ -49,11 +50,12 @@ class TvShowHomeFragment : Fragment(R.layout.fragment_tv_show_home) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setupUI()
 
         binding.cardViewSearch.setOnClickListener {
             searchTvShowListener?.onSearchCLick(didRequestTabChange = true, destinationId = R.id.tvShowSearchFragment)
         }
+
+        setupUI()
     }
 
     private fun setupUI() {

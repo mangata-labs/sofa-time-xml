@@ -3,6 +3,8 @@ package com.mangata.sofatimexml.presentation.tvShowDetail
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.mangata.core_ui.util.UiEvent
+import com.mangata.sofatimexml.presentation.tvShowDetail.state.PosterSectionState
+import com.mangata.sofatimexml.presentation.tvShowDetail.state.toDetailHeaderModel
 import com.mangata.tvshow_domain.model.image.Poster
 import com.mangata.tvshow_domain.model.tvShowDetail.TvShowDetails
 import com.mangata.tvshow_domain.model.tvShowDetail.toTvShow
@@ -12,8 +14,7 @@ import com.mangata.tvshow_domain.repository.TvShowRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.channels.Channel
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.receiveAsFlow
+import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 
 class TvShowDetailViewModel(
@@ -21,17 +22,34 @@ class TvShowDetailViewModel(
     private val tvShowId: Int
 ) : ViewModel() {
 
-    var tvShowDetailState = MutableStateFlow<TvShowDetails?>(null)
-        private set
+    private var tvShowDetailState = MutableStateFlow<TvShowDetails?>(null)
 
-    var headerState = MutableStateFlow(TvDetailsHeaderModel())
-        private set
+    val networks = tvShowDetailState.map { tvShowDetails ->
+        if (tvShowDetails?.networks == null) return@map emptyList()
+        else return@map tvShowDetails.networks
+    }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(), emptyList())
+
+    val headerState = tvShowDetailState.map { tvShowDetails ->
+        tvShowDetails?.toDetailHeaderModel()
+    }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(), null)
+
+    val story = tvShowDetailState.map { tvShowDetails ->
+        if (tvShowDetails?.overview == null) return@map ""
+        else return@map tvShowDetails.overview
+    }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(), "")
 
     var videoState = MutableStateFlow<Video?>(null)
         private set
 
-    var posterState = MutableStateFlow<List<Poster>>(emptyList())
+    var postersState = MutableStateFlow<List<Poster>>(emptyList())
         private set
+
+    val posterSectionState = videoState.combine(postersState) { trailer, posters ->
+        PosterSectionState(
+            trailer = trailer,
+            posters = posters
+        )
+    }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(), PosterSectionState())
 
     var similarTvShowState = MutableStateFlow<List<TvShow>>(emptyList())
         private set
@@ -60,9 +78,9 @@ class TvShowDetailViewModel(
     }
 
     private fun addToWatchList() {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             tvShowDetailState.value?.let {
-                launch(Dispatchers.IO) { repository.addTvShowToWatchList(it.toTvShow()) }
+                repository.addTvShowToWatchList(it.toTvShow())
                 eventChannel.send(UiEvent.SnackbarEvent(uiText = "Added to Watchlist"))
                 isAddedToWatchList.value = true
             }
@@ -70,9 +88,9 @@ class TvShowDetailViewModel(
     }
 
     private fun deleteFromWatchlist() {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             tvShowDetailState.value?.let {
-                launch(Dispatchers.IO) { repository.removeTvShowFromWatchList(it.id) }
+                repository.removeTvShowFromWatchList(it.id)
                 eventChannel.send(UiEvent.SnackbarEvent(uiText = "Deleted from Watchlist"))
                 isAddedToWatchList.value = false
             }
@@ -80,8 +98,8 @@ class TvShowDetailViewModel(
     }
 
     private fun getData() = try {
+        isLoading.value = true
         viewModelScope.launch {
-            isLoading.value = true
             val tvShowDeferred = async { repository.getTvShowDetails(tvShowId) }
             val videoDeferred = async { repository.getVideoForTvShow(tvShowId) }
             val posterDeferred = async { repository.getImagesForTvShow(tvShowId) }
@@ -117,10 +135,13 @@ class TvShowDetailViewModel(
     }
 
     private fun processPosters(posters: List<Poster>) {
-        posterState.value = posters
+        postersState.value = posters
     }
 
-    private fun handleWatchlistSelector(watchList: List<TvShow>, remoteTvShow: TvShowDetails?) : Boolean {
+    private fun handleWatchlistSelector(
+        watchList: List<TvShow>,
+        remoteTvShow: TvShowDetails?
+    ): Boolean {
         if (remoteTvShow == null) return false
         return watchList.find { it.id == remoteTvShow.id } != null
     }
@@ -131,6 +152,5 @@ class TvShowDetailViewModel(
             return
         }
         tvShowDetailState.value = tvShowDetails
-        headerState.value = tvShowDetails.toDetailHeaderModel()
     }
 }
