@@ -36,4 +36,8 @@ dependencies {
 
     implementation AndroidX.coreKtx
     implementation AndroidX.lifecycleKtx
+
+    testImplementation Junit.junit4
+    androidTestImplementation AndroidXTest.core
+    androidTestImplementation AndroidXTest.junitExt
 }

@@ -61,4 +61,8 @@ dependencies {
     implementation(Koin.koinNavigation)
 
     implementation(Coil.coilAndroid)
+
+    testImplementation(Junit.junit4)
+    androidTestImplementation(AndroidXTest.core)
+    androidTestImplementation(AndroidXTest.junitExt)
 }

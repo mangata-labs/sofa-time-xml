@@ -3,9 +3,13 @@
     <CLASSES>
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/04407e91fc943d79962417c2f6736f0b/transformed/koin-androidx-navigation-3.2.0/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/e3343b8c6f81b730eac74ca5f1479886/transformed/koin-androidx-navigation-3.2.0/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/511d9f3335f4262ea21b8240e8996539/transformed/koin-androidx-navigation-3.2.0/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/511d9f3335f4262ea21b8240e8996539/transformed/koin-androidx-navigation-3.2.0/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/511d9f3335f4262ea21b8240e8996539/transformed/koin-androidx-navigation-3.2.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/072358e0c3f61bbb839b92fa342f05c1/transformed/koin-androidx-navigation-3.2.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/c697fea53253d8749d74c816aaa5bbf2/transformed/koin-androidx-navigation-3.2.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/0cb006f176fc11dc9c0303f5e33e3c77/transformed/koin-androidx-navigation-3.2.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/da151ee3900c0ad191b4ecf7b54ac918/transformed/koin-androidx-navigation-3.2.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/da151ee3900c0ad191b4ecf7b54ac918/transformed/koin-androidx-navigation-3.2.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/da151ee3900c0ad191b4ecf7b54ac918/transformed/koin-androidx-navigation-3.2.0/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.insert-koin/koin-androidx-navigation/3.2.0/7d1772c2c1225aded7d5113f16c8f9e651a74543/koin-androidx-navigation-3.2.0-javadoc.jar!/" />

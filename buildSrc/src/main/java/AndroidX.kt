@@ -15,3 +15,11 @@ object AndroidX {
     const val navigationFragment = "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
     const val navigationKtx = "androidx.navigation:navigation-ui-ktx:$navigationVersion"
 }
+
+object AndroidXTest {
+    private const val testCoreVersion = "1.5.0"
+    const val core = "androidx.test:core-ktx:$testCoreVersion"
+
+    private const val junitExtVersion = "1.1.4"
+    const val junitExt = "androidx.test.ext:junit-ktx:$junitExtVersion"
+}
