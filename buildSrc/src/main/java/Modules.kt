@@ -4,5 +4,4 @@ object Modules {
 
     const val tvShowData = ":tvshow-data"
     const val tvShowDomain = ":tvshow-domain"
-    const val tvShowPresentation = ":tvshow-presentation"
 }
